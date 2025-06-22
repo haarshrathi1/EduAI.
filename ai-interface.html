@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EduAI - Chat Interface</title>
+  <meta name="description" content="EduAI Chat Interface - Your Medical AI Assistant" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap + Font Awesome + SweetAlert2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">EduAI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+        <button class="btn btn-outline-light" id="logoutNavBtn" style="display: none;">
+          Logout <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Header Row: Title + Dark Mode Toggle -->
+    <div class="row justify-content-between mb-2">
+      <div class="col">
+        <h2 class="h4 text-primary" id="chatTitle">EduAI Chat</h2>
+      </div>
+      <div class="col text-end">
+        <label class="me-2">Dark Mode</label>
+        <input type="checkbox" id="darkModeToggle" />
+        <button class="btn btn-sm btn-secondary ms-3" id="backToHomeBtn">
+          <i class="fas fa-home"></i> Home
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Row: Sidebar + Chat -->
+    <div class="row">
+      <!-- SIDEBAR (Conversation List) -->
+      <div class="col-md-3 mb-3" id="sidebarWrapper">
+        <!-- New Conversation Button -->
+        <button class="btn btn-primary w-100 mb-2" id="newConversationBtn">
+          <i class="fas fa-plus"></i> New Conversation
+        </button>
+
+        <!-- List of existing conversations -->
+        <div class="list-group" id="conversationList">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+
+      <!-- CHAT COLUMN -->
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <!-- (User Category Selection removed) -->
+
+            <!-- Typing Indicator + Spinner -->
+            <div class="d-flex align-items-center mb-2">
+              <span id="typingIndicator" style="display:none;">
+                <i class="fas fa-ellipsis-h fa-pulse"></i> EduAI is typing...
+              </span>
+              <span id="loadingSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none; margin-left:0.5rem;"></span>
+            </div>
+
+            <!-- Chat Display -->
+            <div class="border rounded p-3 mb-3" id="chatDisplay" style="height: 400px; overflow-y: auto;">
+              <!-- Example initial message -->
+              <div class="message ai mb-2 p-2 bg-light rounded">
+                Hello! I'm your AI medical assistant. How can I help you today?
+              </div>
+            </div>
+
+            <!-- Chat Input / Voice / File -->
+            <div class="input-group">
+              <input type="text" id="questionInput" class="form-control" placeholder="Type your message..." />
+              <button class="btn btn-outline-secondary" id="voiceBtn" aria-label="Voice Input">
+                <i class="fas fa-microphone"></i>
+              </button>
+
+              <!-- Hidden File Input -->
+              <input type="file" id="fileInput" class="d-none" accept=".txt,.pdf,.doc,.docx" />
+              <button class="btn btn-outline-secondary" id="uploadBtn" aria-label="Upload File">
+                <i class="fas fa-paperclip"></i>
+              </button>
+
+              <button class="btn btn-primary" id="sendBtn" aria-label="Send Message">
+                <i class="fas fa-paper-plane"></i> Send
+              </button>
+            </div>
+            <small class="text-muted" id="fileName"></small>
+          </div>
+        </div>
+        
+        <!-- Medical Disclaimer -->
+        <div class="card mt-3">
+          <div class="card-body">
+            <div class="alert alert-info mb-0">
+              <i class="fas fa-info-circle me-2"></i>
+              <strong>Medical Disclaimer:</strong> EduAI provides general information only and is not a substitute for professional medical advice. Always consult a healthcare provider for medical concerns.
+            </div>
+          </div>
+        </div>
+      </div> <!-- /col-md-9 -->
+    </div> <!-- /row -->
+  </div>
+
+  <footer class="bg-light text-center py-3 mt-4">
+    <p class="mb-0">&copy; 2025 EduAI. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap + JS (Deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- Link to our main.js -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

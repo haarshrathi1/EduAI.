@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="EduAI - Your AI-based medical assistant for students and professionals." />
+  <meta name="keywords" content="Medical, AI, Education, Healthcare, Chatbot" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAI - Home</title>
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">EduAI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a href="login.html" id="loginNavLink" class="btn btn-outline-light ms-2">Login</a>
+        <a href="signup.html" id="signupNavLink" class="btn btn-primary ms-2">Sign Up</a>
+        <button class="btn btn-danger ms-2" id="logoutNavBtn" style="display: none;">
+          Logout <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-primary text-white text-center py-5 hero">
+    <div class="container">
+      <h1 class="display-4">Your Personal Medical Assistant</h1>
+      <p class="lead">
+        Ask any medical question and receive accurate, detailed, and structured responses from our AI-powered assistant.
+      </p>
+      <button class="btn btn-light btn-lg mt-3" id="askQuestionBtn" aria-label="Ask a Question">
+        Ask a Question <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5" id="features">
+    <div class="container">
+      <h2 class="text-center mb-5">Features</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card text-center h-100 p-3">
+            <i class="fas fa-brain fa-2x text-primary mb-3"></i>
+            <h5 class="card-title">Advanced AI</h5>
+            <p class="card-text">
+              Leverages cutting-edge AI to provide accurate and comprehensive medical answers.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-center h-100 p-3">
+            <i class="fas fa-microphone fa-2x text-primary mb-3"></i>
+            <h5 class="card-title">Voice Input</h5>
+            <p class="card-text">
+              Ask questions using your microphone with built-in voice recognition.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-center h-100 p-3">
+            <i class="fas fa-file-upload fa-2x text-primary mb-3"></i>
+            <h5 class="card-title">File Upload</h5>
+            <p class="card-text">
+              Upload prescriptions or medical images to share with the AI assistant.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-center h-100 p-3">
+            <i class="fas fa-user-md fa-2x text-primary mb-3"></i>
+            <h5 class="card-title">Medical Expertise</h5>
+            <p class="card-text">
+              Designed to assist students and professionals with detailed medical information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="bg-light py-5" id="about">
+    <div class="container">
+      <h2 class="text-center mb-5">About EduAI</h2>
+      <p class="text-center">
+        EduAI is dedicated to empowering medical students and professionals by providing a reliable and intelligent
+        assistant. Our mission is to make medical knowledge more accessible and understandable, facilitating learning
+        and decision-making processes.
+      </p>
+      <p class="text-center">
+        <strong>Note:</strong> EduAI is in continuous development. Answers may evolve over time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5 bg-white" id="contact">
+    <div class="container">
+      <h2 class="text-center mb-5 section-title">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form id="contactForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Your Name" required />
+              </div>
+              <div class="col-md-6">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="contactEmail" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div class="mt-3">
+              <label for="contactMessage" class="form-label">Message</label>
+              <textarea class="form-control" id="contactMessage" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="mt-4 text-end">
+              <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane ms-1"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-dark text-white py-5" id="contact">
+    <div class="container text-center">
+      <p>Have questions or feedback? Reach out to us on our social channels below.</p>
+      <div class="mt-3">
+        <a href="https://x.com/harsh_rathi1" class="text-white mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/haarshrathi/" class="text-white mx-2"><i class="fab fa-linkedin-in fa-2x"></i></a>
+        <a href="https://www.instagram.com/harshrathi1/" class="text-white mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-light text-center py-3">
+    <p class="mb-0">&copy; 2025 EduAI. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EduAI - FAQ</title>
+  <meta name="description" content="FAQ powered by EduAI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap + Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">EduAI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="ai-interface.html">Chat</a></li>
+        </ul>
+        <button class="btn btn-danger ms-3" id="logoutNavBtn" style="display: none;">
+          Logout <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <h2 class="mb-3">Frequently Asked Questions (AI-Powered)</h2>
+    <div id="faqContent" class="border p-3 rounded" style="min-height: 200px;">
+      <p>Loading FAQ, please wait...</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('/api/faq'); // Adjust to your backend route
+        const data = await res.json();
+        if (res.ok) {
+          document.getElementById('faqContent').innerHTML = data.faq;
+        } else {
+          document.getElementById('faqContent').innerHTML = '<p>Error loading FAQ.</p>';
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById('faqContent').innerHTML = '<p>Error loading FAQ.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

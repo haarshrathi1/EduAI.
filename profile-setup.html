@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EduAI - Profile Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap & FA -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="fas fa-heartbeat"></i> EduAI
+      </a>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#process">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#news">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+        <a href="login.html" class="btn btn-outline-primary ms-3">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PROFILE SETUP FORM -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card p-4">
+          <h2 class="text-center text-primary mb-4">Complete Your Profile</h2>
+          <form id="profileForm">
+            <div class="mb-3">
+              <label for="age" class="form-label">Age</label>
+              <input
+                type="number"
+                id="age"
+                class="form-control"
+                placeholder="Enter your age"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="occupation" class="form-label">Occupation</label>
+              <input
+                type="text"
+                id="occupation"
+                class="form-control"
+                placeholder="E.g. Student, Nurse, Doctor..."
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="location" class="form-label">Location</label>
+              <input
+                type="text"
+                id="location"
+                class="form-control"
+                placeholder="City / State / Country"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="interests" class="form-label">Interests</label>
+              <input
+                type="text"
+                id="interests"
+                class="form-control"
+                placeholder="E.g. Cardiology, Nutrition..."
+              />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Save Profile</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2025 EduAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- main.js for profile logic -->
+  <script src="main.js"></script>
+</body>
+</html>
