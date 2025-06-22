@@ -39,9 +39,9 @@ import { getProfileByEmail, updateProfile } from './profile-db.js';
  *************************************************/
 const SECRET_KEY = 'YOUR_SUPER_SECRET_KEY_HERE';
 const REFRESH_SECRET_KEY = 'YOUR_SUPER_REFRESH_SECRET_KEY_HERE';
-const OPENAI_API_KEY = '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';
-const EMAIL_USER = 'popoipika@gmail.com';
-const EMAIL_PASS = 'wmvo ochw emsk fkiq';
+const OPENAI_API_KEY = '';
+const EMAIL_USER = '';
+const EMAIL_PASS = '';
 const EMAIL_SERVICE = 'gmail';
 
 /*************************************************
